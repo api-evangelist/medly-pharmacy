@@ -1,0 +1,245 @@
+generated: '2026-08-25'
+method: probed
+source: http://medly.com/
+name: Medly Pharmacy well-known + contract discovery probe
+description: >-
+  Negative probe record for Medly Pharmacy (Medly Health Inc.). The company converted to a Chapter 7
+  liquidation on 2023-04-26 after selling its prescription files, inventory and intellectual property
+  to Walgreens. Its former host medly.com is now controlled by the acquirer: port 443 has no listener
+  (every HTTPS request times out at the TCP layer) and port 80 answers HTTP 301 with
+  `Location: https://www.walgreens.com/` for EVERY path, including every /.well-known/* path and
+  every specification path. Not one of those responses is a document. No WellKnown, SecurityTxt,
+  AgentCard, LLMsTxt, OpenAPI, AsyncAPI, MCPServer or GraphQL pointer is emitted from this probe, and
+  none should ever be emitted from it in a later round.
+
+host_status:
+  host: medly.com
+  controlled_by_provider: false
+  controlled_by: Walgreens Boots Alliance (acquirer of Medly's IP, 2023-02-09, $19.35M)
+  disposition: redirect-to-acquirer
+  dns:
+    a_records:
+    - 165.160.13.20
+    - 165.160.15.20
+    wildcard: true
+    wildcard_note: >-
+      api., docs., developer., developers., app., portal. and status..medly.com all resolve to the
+      same two addresses; the zone answers every label. A resolving subdomain is NOT evidence of a
+      service here.
+  https:
+    port_443: no-listener
+    result: connection timed out after 8s on every attempt
+  http:
+    port_80: 301
+    location: https://www.walgreens.com/
+    blanket_redirect: true
+
+blanket_301_catch_all: true
+blanket_301_note: >-
+  Every probed path returned 301 with a zero-length body and the identical
+  `Location: https://www.walgreens.com/` header — the acquirer's homepage, not a per-path mapping.
+  Treat all of them as misses.
+
+hosts:
+- host: medly.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 301
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+    file: null
+  - path: /.well-known/api-catalog
+    status: 301
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 301
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 301
+    file: null
+  - path: /.well-known/agent.json
+    status: 301
+    file: null
+
+probes:
+- path: /.well-known/security.txt
+  url: http://medly.com/.well-known/security.txt
+  status: 301
+  location: https://www.walgreens.com/
+  bytes: 0
+  document: false
+  result: miss
+  file: null
+- path: /.well-known/openid-configuration
+  url: http://medly.com/.well-known/openid-configuration
+  status: 301
+  location: https://www.walgreens.com/
+  bytes: 0
+  document: false
+  result: miss
+  file: null
+- path: /.well-known/oauth-authorization-server
+  url: http://medly.com/.well-known/oauth-authorization-server
+  status: 301
+  location: https://www.walgreens.com/
+  bytes: 0
+  document: false
+  result: miss
+  file: null
+- path: /.well-known/api-catalog
+  url: http://medly.com/.well-known/api-catalog
+  status: 301
+  location: https://www.walgreens.com/
+  bytes: 0
+  document: false
+  result: miss
+  file: null
+- path: /.well-known/ai-plugin.json
+  url: http://medly.com/.well-known/ai-plugin.json
+  status: 301
+  location: https://www.walgreens.com/
+  bytes: 0
+  document: false
+  result: miss
+  file: null
+- path: /.well-known/agent-card.json
+  url: http://medly.com/.well-known/agent-card.json
+  status: 301
+  location: https://www.walgreens.com/
+  bytes: 0
+  document: false
+  result: miss
+  file: null
+  note: >-
+    301 to the acquirer homepage, not a JSON AgentCard object. No AgentCard pointer emitted, and per
+    the pipeline contract an agent card is SEARCH-ONLY and is never authored on a provider's behalf.
+- path: /.well-known/agent.json
+  url: http://medly.com/.well-known/agent.json
+  status: 301
+  location: https://www.walgreens.com/
+  bytes: 0
+  document: false
+  result: miss
+  file: null
+  note: Legacy pre-0.3 A2A path. Same blanket redirect.
+
+contract_discovery:
+  openapi:
+  - url: http://medly.com/openapi.json
+    status: 301
+    parses_as_openapi: false
+    result: miss
+  - url: http://medly.com/swagger.json
+    status: 301
+    parses_as_openapi: false
+    result: miss
+  - url: https://medly.com/openapi.json
+    status: 0
+    parses_as_openapi: false
+    result: miss
+    note: HTTPS connection timed out — no listener on port 443.
+  - url: https://api.medly.com/
+    status: 0
+    parses_as_openapi: false
+    result: miss
+    note: HTTPS timed out; HTTP answers 301 to walgreens.com.
+  - url: https://docs.medly.com/
+    status: 0
+    parses_as_openapi: false
+    result: miss
+  - url: https://developer.medly.com/
+    status: 0
+    parses_as_openapi: false
+    result: miss
+  graphql: []
+  mcp: []
+  a2a_agent_card: []
+  wsdl: []
+  grpc_protobuf: []
+  api_hosts_resolved:
+  - host: api.medly.com
+    dns: 165.160.13.20, 165.160.15.20 (wildcard)
+    http_status: 301
+    location: https://www.walgreens.com/
+  - host: docs.medly.com
+    dns: 165.160.13.20, 165.160.15.20 (wildcard)
+    http_status: 301
+    location: https://www.walgreens.com/
+  - host: developer.medly.com
+    dns: 165.160.13.20, 165.160.15.20 (wildcard)
+    http_status: 301
+    location: https://www.walgreens.com/
+  - host: app.medly.com
+    dns: 165.160.13.20, 165.160.15.20 (wildcard)
+    http_status: 301
+    location: https://www.walgreens.com/
+  github_org_code_search:
+  - query: 'org:medly filename:openapi'
+    api: https://api.github.com/search/code
+    status: 200
+    total_count: 1
+    result: miss
+    note: >-
+      The single hit is medly/apifi codegen/src/main/kotlin/apifi/parser/OpenApiSpecReader.kt — the
+      source of a code generator that READS OpenAPI, not an OpenAPI describing a Medly API. No
+      OpenAPI, AsyncAPI, GraphQL SDL, .proto or WSDL document exists anywhere in either Medly GitHub
+      organization.
+  - query: 'org:medly openapi extension:yaml'
+    api: https://api.github.com/search/code
+    status: 200
+    total_count: 0
+    result: miss
+
+llms_txt:
+  url: http://medly.com/llms.txt
+  status: 301
+  location: https://www.walgreens.com/
+  is_real_llms_txt: false
+  note: >-
+    No llms.txt is served. None was generated either: a generated llms.txt would be an API Evangelist
+    document, and emitting an LLMsTxt pointer for it would credit a liquidated company with an agent
+    surface it does not serve. Same rule as the well-known pointer above.
+
+other_surfaces:
+- what: GitHub organization (engineering open source)
+  url: https://api.github.com/orgs/medly
+  status: 200
+  result: hit
+  note: >-
+    "Medly Open Source", created 2019-09-05, blog https://medly.com, 14 public repositories. Confirmed
+    first-party: medly-components ships `Copyright (c) 2020 Medly` (MIT) and the Kotlin projects
+    publish under the `com.medly` / `com.medly.norm` Maven groups. Contents are engineering libraries
+    and build tooling — a React design system, a Kotlin data-access library, Gradle plugins, an
+    OpenAPI code generator — NOT client SDKs for a Medly API. Recorded in
+    packages/medly-pharmacy-packages.yml.
+- what: GitHub organization (CI/CD action forks)
+  url: https://api.github.com/orgs/medlypharmacy
+  status: 200
+  result: hit
+  note: >-
+    "Medly Pharmacy", NYC, created 2017-08-03, blog https://medly.com, 7 public repositories — all
+    GitHub Actions helpers and forks (s3-artifacts-action, codepipeline-webhook-action, paths-filter,
+    aws-nuke). No API contract, no SDK.
+- what: Forge Global secondary-market listing (the harvest source)
+  url: https://forgeglobal.com/medly-pharmacy_stock/
+  status: 403
+  result: blocked
+  note: >-
+    Cloudflare interstitial ("Just a moment..."), not a dead page. It is a secondary-market share
+    listing, not a company website, so it is wired as SecondaryMarketListing rather than Website —
+    a venue 200 is not the company's web presence.
+- what: Acquirer homepage (redirect target)
+  url: https://www.walgreens.com/
+  status: 200
+  result: n/a
+  note: Walgreens is the acquirer, a separate company with its own profile and its own developer portal.
+
+conclusion: >-
+  Medly Pharmacy has no API surface to enrich and no host it still controls. Every candidate host and
+  every candidate contract path was probed and every one missed. The only live first-party material is
+  open-source engineering tooling, captured in packages/. This is a historical record, not a thin
+  profile. Any future round should re-read host_status before probing medly.com again.

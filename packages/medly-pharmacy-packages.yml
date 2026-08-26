@@ -1,0 +1,212 @@
+generated: '2026-08-25'
+method: searched
+source: >-
+  https://github.com/medly + https://registry.npmjs.org/@medly-components/* +
+  https://search.maven.org/solrsearch/select?q=g:com.medly* +
+  https://plugins.gradle.org/m2/com/medly/norm/plugin/maven-metadata.xml
+name: Medly Pharmacy published packages
+description: >-
+  First-party packages published by Medly (Medly Health Inc.) to npm, Maven Central and the Gradle
+  Plugin Portal from its `medly` GitHub organization. READ THIS FIRST: none of these is an API client
+  SDK. Medly never published a public API, so there is nothing for a client library to wrap. What the
+  company published is internal engineering open source — a React design system, a Kotlin data-access
+  library, Gradle build plugins, a Micronaut code generator, and detekt/CI extensions. They are
+  recorded here because they are real, first-party, dated and verifiable, and because their release
+  dates are the only provider-published decay evidence this company still emits. No `SDKs` pointer is
+  emitted in apis.yml for exactly this reason — sdk_count must not be credited from a design system.
+api_client_sdks: 0
+api_client_sdks_note: >-
+  Zero. Confirmed by GitHub code search across both Medly organizations: no OpenAPI, AsyncAPI, GraphQL
+  SDL, .proto or WSDL document exists, and no repository is an HTTP client for a medly.com service.
+
+company_status_note: >-
+  Medly Health Inc. converted to Chapter 7 liquidation on 2023-04-26. The npm design-system packages
+  nonetheless carry release dates into 2024 and 2025, published under the same scope and repository by
+  the original maintainers (GitHub org members kdabir, souro1212) under an MIT licence. Treat the
+  post-2023 releases as community continuation of an abandoned corporate project, not as evidence the
+  company is operating.
+
+packages:
+
+- name: '@medly-components/core'
+  registry: npm
+  url: https://www.npmjs.com/package/@medly-components/core
+  version: 7.24.0
+  published: '2025-05-11'
+  language: typescript
+  official: true
+  api_client: false
+  kind: ui-component-library
+  repository: https://github.com/medly/medly-components
+  docs: https://medly.github.io/medly-components/
+  license: MIT
+  description: Themeable React components — Avatar, Button, Input, List, Modal and similar.
+
+- name: '@medly-components/forms'
+  registry: npm
+  url: https://www.npmjs.com/package/@medly-components/forms
+  version: 3.6.11
+  published: '2025-05-11'
+  language: typescript
+  official: true
+  api_client: false
+  kind: ui-component-library
+  repository: https://github.com/medly/medly-components
+  license: MIT
+  description: React dynamic form component and related hooks.
+
+- name: '@medly-components/layout'
+  registry: npm
+  url: https://www.npmjs.com/package/@medly-components/layout
+  version: 3.2.133
+  published: '2025-05-11'
+  language: typescript
+  official: true
+  api_client: false
+  kind: ui-component-library
+  repository: https://github.com/medly/medly-components
+  license: MIT
+  description: Page-layout components.
+
+- name: '@medly-components/icons'
+  registry: npm
+  url: https://www.npmjs.com/package/@medly-components/icons
+  version: 1.15.4
+  published: '2025-04-15'
+  language: typescript
+  official: true
+  api_client: false
+  kind: ui-component-library
+  repository: https://github.com/medly/medly-components
+  license: MIT
+  description: Icon set for the Medly design system.
+
+- name: '@medly-components/loaders'
+  registry: npm
+  url: https://www.npmjs.com/package/@medly-components/loaders
+  version: 1.6.30
+  published: '2025-04-15'
+  language: typescript
+  official: true
+  api_client: false
+  kind: ui-component-library
+  repository: https://github.com/medly/medly-components
+  license: MIT
+
+- name: '@medly-components/markdown'
+  registry: npm
+  url: https://www.npmjs.com/package/@medly-components/markdown
+  version: 0.4.44
+  published: '2025-04-15'
+  language: typescript
+  official: true
+  api_client: false
+  kind: ui-component-library
+  repository: https://github.com/medly/medly-components
+  license: MIT
+
+- name: '@medly-components/utils'
+  registry: npm
+  url: https://www.npmjs.com/package/@medly-components/utils
+  version: 3.4.1
+  published: '2025-04-15'
+  language: typescript
+  official: true
+  api_client: false
+  kind: utility-library
+  repository: https://github.com/medly/medly-components
+  license: MIT
+
+- name: '@medly-components/theme'
+  registry: npm
+  url: https://www.npmjs.com/package/@medly-components/theme
+  version: 6.5.0
+  published: '2024-10-23'
+  language: typescript
+  official: true
+  api_client: false
+  kind: ui-component-library
+  repository: https://github.com/medly/medly-components
+  license: MIT
+  description: Default theme and theme typings for the Medly design system.
+
+- name: com.medly.norm:runtime
+  registry: maven-central
+  url: https://search.maven.org/artifact/com.medly.norm/runtime
+  version: 0.0.7
+  published: '2022-04-08'
+  language: kotlin
+  official: true
+  api_client: false
+  kind: data-access-library
+  repository: https://github.com/medly/norm
+  docs: https://medly.github.io/norm/
+  description: >-
+    NORM ("Not an ORM") — compile-time SQL-to-Kotlin code generation. Sibling artifacts api, cli and
+    codegen ship the same 0.0.7 / 2022-04-08 coordinates.
+  siblings:
+  - com.medly.norm:api
+  - com.medly.norm:cli
+  - com.medly.norm:codegen
+
+- name: com.medly.norm:plugin
+  registry: gradle-plugin-portal
+  url: https://plugins.gradle.org/plugin/com.medly.norm
+  version: 0.0.7
+  published: '2022-04-08'
+  language: kotlin
+  official: true
+  api_client: false
+  kind: build-plugin
+  repository: https://github.com/medly/norm
+  note: >-
+    Read from https://plugins.gradle.org/m2/com/medly/norm/plugin/maven-metadata.xml
+    (lastUpdated 20220408065346). Two published versions total: 0.0.6, 0.0.7.
+
+- name: com.medly:ktee
+  registry: maven-central
+  url: https://search.maven.org/artifact/com.medly/ktee
+  version: 1.0.0
+  published: '2021-02-02'
+  language: kotlin
+  official: true
+  api_client: false
+  kind: utility-library
+  repository: https://github.com/medly/ktee
+  description: Tee for Kotlin.
+
+- name: com.medly:detekt-extensions
+  registry: maven-central
+  url: https://search.maven.org/artifact/com.medly/detekt-extensions
+  version: 0.0.2
+  published: '2021-04-04'
+  language: kotlin
+  official: true
+  api_client: false
+  kind: static-analysis-plugin
+  repository: https://github.com/medly/detekt-extensions
+
+- name: com.medly:apifi
+  registry: jitpack
+  url: https://jitpack.io/#com.medly/apifi
+  version: null
+  published: null
+  language: kotlin
+  official: true
+  api_client: false
+  kind: code-generator
+  repository: https://github.com/medly/apifi
+  note: >-
+    "Open API spec driven HTTP APIs" — a Micronaut server-stub generator that CONSUMES an OpenAPI
+    document; it is not itself an API contract and describes no Medly service. Distributed via JitPack
+    only, which is a build-on-demand proxy with no published release metadata; the request to
+    https://jitpack.io/api/builds/com.medly/apifi timed out, so version and published are recorded as
+    null rather than guessed. Repository last pushed 2020-10-12.
+
+decay_signal:
+  most_recent_release: '2025-05-11'
+  oldest_still_latest: '2021-02-02'
+  note: >-
+    The Kotlin estate (norm, ktee, detekt-extensions, apifi) has been static since 2020-2022 and
+    predates the company's 2022 bankruptcy filing. Only the JavaScript design system has moved since,
+    and it is not an API surface.

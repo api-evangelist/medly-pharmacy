@@ -64,5 +64,16 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Medly Pharmacy is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/medly-pharmacy_stock/
+Medly Pharmacy (Medly Health Inc.) was a Brooklyn, New York digital pharmacy founded in 2017,
+offering free same-day prescription delivery from its own retail locations. It never published a
+developer program, public API, SDK or machine-readable specification. The company filed Chapter 11
+on 9 December 2022, sold its prescription files, inventory and intellectual property to Walgreens
+for $19.35M in February 2023, and converted to a Chapter 7 liquidation on 26 April 2023. `medly.com`
+is now controlled by the acquirer and returns HTTP 301 to `walgreens.com` on every path.
+
+This profile is retained as a **historical record**. There is no API surface to enrich.
+
+- Contract discovery probe (all misses): [`well-known/medly-pharmacy-well-known.yml`](well-known/medly-pharmacy-well-known.yml)
+- First-party open-source packages — a React design system and Kotlin build tooling, **not** API client SDKs: [`packages/medly-pharmacy-packages.yml`](packages/medly-pharmacy-packages.yml)
+- GitHub organization: https://github.com/medly
+- Secondary-market listing (the harvest source, not a company website): https://forgeglobal.com/medly-pharmacy_stock/
