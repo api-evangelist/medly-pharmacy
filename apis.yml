@@ -19,6 +19,17 @@ description: >-
   organization and its npm and Maven Central packages — none of which is an API client. This profile
   is retained as a historical record; there is no API surface to enrich.
 url: https://raw.githubusercontent.com/api-evangelist/medly-pharmacy/refs/heads/main/apis.yml
+deliveryModel:
+  model: unknown
+  open_source: unknown
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - repository-unlicensed
+  generated: '2026-08-28'
+  method: derived
 image: https://avatars.githubusercontent.com/u/54950577?v=4
 x-type: company
 x-source: harvest:secondary-market
