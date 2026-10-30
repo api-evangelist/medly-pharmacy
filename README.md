@@ -64,16 +64,34 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Medly Pharmacy (Medly Health Inc.) was a Brooklyn, New York digital pharmacy founded in 2017,
-offering free same-day prescription delivery from its own retail locations. It never published a
-developer program, public API, SDK or machine-readable specification. The company filed Chapter 11
-on 9 December 2022, sold its prescription files, inventory and intellectual property to Walgreens
-for $19.35M in February 2023, and converted to a Chapter 7 liquidation on 26 April 2023. `medly.com`
-is now controlled by the acquirer and returns HTTP 301 to `walgreens.com` on every path.
+> **No longer operating.** This company or product has shut down, been discontinued, or been deprecated. This profile is kept as a historical record and is not maintained or rated.
 
-This profile is retained as a **historical record**. There is no API surface to enrich.
+Medly Pharmacy (Medly Health Inc.) was a Brooklyn, New York digital pharmacy founded in 2017 by Marg Patel, a second-generation pharmacist. It operated a hybrid model — physical retail pharmacy locations paired with free same-day prescription delivery — supported by a consumer mobile app for refills, prescription status and pharmacist chat, and a prescriber-facing e-prescribing workflow it marketed to physician practices. The company raised a $100M Series B in July 2020, expanded into several US metros, and in 2021 acquired the health-and-wellness retailer Pharmaca. It never published a developer program, public API, SDK, machine-readable specification or partner integration reference; the platform was an internal product, not a product sold to developers. Medly Health filed for Chapter 11 bankruptcy on 9 December 2022 along with 31 affiliates, agreed on 9 February 2023 to sell its remaining prescription files, inventory and intellectual property to Walgreens for $19.35M, wound down all retail and e-commerce operations by 31 March 2023, and converted to a Chapter 7 liquidation on 26 April 2023. In September 2024 the SEC charged three former executives, including the founder, in connection with the company's capital raises. The medly.com domain is now controlled by the acquirer and blanket-redirects every path to walgreens.com. What survives publicly is the company's engineering open source — the GitHub `medly` organization and its npm and Maven Central packages — none of which is an API client. This profile is retained as a historical record; there is no API surface to enrich.
 
-- Contract discovery probe (all misses): [`well-known/medly-pharmacy-well-known.yml`](well-known/medly-pharmacy-well-known.yml)
-- First-party open-source packages — a React design system and Kotlin build tooling, **not** API client SDKs: [`packages/medly-pharmacy-packages.yml`](packages/medly-pharmacy-packages.yml)
-- GitHub organization: https://github.com/medly
-- Secondary-market listing (the harvest source, not a company website): https://forgeglobal.com/medly-pharmacy_stock/
+**Areas:** Company · Defunct · Healthcare · Pharmacy · Prescription Delivery · Digital Health · E-Commerce · Retail · Consumer · Open Source
+
+## Medly Pharmacy on APIs.io (historical record)
+
+Everything profiled for Medly Pharmacy is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/medly-pharmacy/](https://apis.io/providers/medly-pharmacy/)** — or go straight to one of the APIs or properties below.
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [GitHub](https://github.com/medly)
+
+## API Evangelist rating
+
+**Not rated** — this company is recorded as no longer operating, so no score is published. If it is in fact operating, say so on this repository and it will be re-profiled.
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Medly Pharmacy: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/medly-pharmacy/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
